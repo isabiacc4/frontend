@@ -13,6 +13,9 @@ export default App = () => {
           component={HomeScreen}
           options={{title: 'Página Inicial'}}
         />
+        <Stack.Screen/>
+        <Stack.Screen/>
+        <Stack.Screen/>
       </Stack.Navigator>
     </NavigationContainer>
   )

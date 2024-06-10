@@ -7,14 +7,16 @@ import {
   Button,
   Image,
 } from "react-native";
+import Header from '../components/Header'
 
 const HomeScreen = ({ navigation }) => {
   return (
     <ScrollView>
+      <Header/>
       <View style={styles.corpo}>
         <StatusBar backgroundColor="#058C42" />
 
-        {/* container titulo prop */}
+        
 
         <View style={styles.containerBoasVindas}>
           <Text style={{ color: "white", fontStyle: "italic", fontSize: 25 }}>
@@ -43,7 +45,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte os professores</Text>
               <Button
                 title="Mais detalhes"
-                // onPress={() => navigation.navigate("Details")}
+                onPress={() => navigation.navigate("Details")}
                 color="#AD6701"
               />
             </View>
@@ -56,7 +58,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte os professores</Text>
               <Button
                 title="Mais detalhes"
-                // onPress={() => navigation.navigate("Details")}
+                onPress={() => navigation.navigate("Details")}
                 color="#01667B"
               />
             </View>
@@ -69,7 +71,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte as alocações</Text>
               <Button
                 title="Mais detalhes"
-                // onPress={() => navigation.navigate("Details")}
+                onPress={() => navigation.navigate("Details")}
                 color="#400048"
               />
             </View>
@@ -82,7 +84,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Visão geral das alocações</Text>
               <Button
                 title="Mais detalhes"
-                // onPress={() => navigation.navigate("Details")}
+                onPress={() => navigation.navigate("ConsultarVisoes")}
                 color="#720101"
               />
             </View>
