@@ -1,7 +1,7 @@
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.42.59:3000/api"; // Ajuste para o seu IP
+const API_URL = "http://10.136.35.33:3000/api"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarVisoes() {
