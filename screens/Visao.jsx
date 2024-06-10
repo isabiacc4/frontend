@@ -8,7 +8,7 @@ export default function ConsultarVisoes() {
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
     try {
-      const response = await fetch(${API_URL}/visao_aloc); // Faz a requisição GET para a API
+      const response = await fetch($`{API_URL}/visao_aloc`); // Faz a requisição GET para a API
       if (!response.ok) {
         const errorResponse = await response.text(); // Lê a resposta de erro
         throw new Error(errorResponse); // Lança um erro com a resposta
