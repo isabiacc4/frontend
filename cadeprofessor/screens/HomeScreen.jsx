@@ -1,5 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View, Button } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Image,
+} from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -15,19 +22,12 @@ const HomeScreen = ({ navigation }) => {
           </Text>
           <Text></Text>
           <Text style={{ color: "white", fontSize: 14 }}>
-            Confira abaixo às informações disponíveis:{" "}
+            Este projeto de aplicativo mobile está conectado com API e banco de dados, confira abaixo às informações disponíveis:{" "}
           </Text>
         </View>
 
-        <Image
-          source={{
-            uri: "C:Usersaluno2DocumentsAula_reactive_nativePROJETO_MOBILEDB\frontendcadeprofessorassets\tupileandrodeitado.jpeg",
-          }}
-          style={styles.image}
-        />
+        <Image source={require('../assets/tupileandrodeitado.jpeg')} style={styles.image} />
 
-        <Text></Text>
-        <Text></Text>
         <Text></Text>
 
         <View style={styles.nav}>
@@ -150,5 +150,13 @@ const styles = StyleSheet.create({
     display: "flex",
     alignContent: "center",
     justifyContent: "center",
+  },
+
+  image: {
+    width: 300,
+    height: 200,
+    margin: 20, 
+    justifyContent: 'center',
+    borderRadius: 45
   },
 });
