@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import Header from '../components/Header'
+import Footer from "../components/Footer";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -89,7 +90,10 @@ const HomeScreen = ({ navigation }) => {
               />
             </View>
           </View>
+
         </View>
+
+        <Footer/>
       </View>
     </ScrollView>
   );
