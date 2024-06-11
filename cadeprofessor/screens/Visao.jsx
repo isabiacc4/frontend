@@ -32,7 +32,7 @@ export default function ConsultarVisoes() {
       <Button title="Listar todas as visões gerais" onPress={fetchAllVisoes} />
       {visoes.length > 0 && (
         <FlatList
-          data={visoes} // Dados da lista de produtos
+          data={banco} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
             <View style={styles.visao}>

@@ -7,7 +7,7 @@ const Header = () => {
     
         <Image
             source={require("../assets/logoheader.png")}
-            style={{ width: 100, height: 100 }}>
+            style={{ width: 100, height: 100, borderRadius: 50 }}>
         </Image>
 
         <View>

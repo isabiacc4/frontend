@@ -15,8 +15,9 @@ import { useNavigation } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
-const HomeScreen = () => {
-  const navigation = useNavigation();
+const HomeScreen = ({ navigation }) => {
+
+  // const navigation = useNavigation();
 
   return (
     <ScrollView>

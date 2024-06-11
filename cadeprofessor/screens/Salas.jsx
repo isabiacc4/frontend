@@ -41,7 +41,7 @@ export default function ConsultarSala() {
                 <Button title="Consultar sala" onPress={fetchSalas} />
 
                 <FlatList
-                    data={salas}
+                    data={sala}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => (
                         <View style={styles.salas}>

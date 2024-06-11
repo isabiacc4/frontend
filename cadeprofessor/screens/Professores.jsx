@@ -46,7 +46,7 @@ export default function ConsultarProfessor() {
         <Button title="Consultar professor(a)" onPress={fetchProf} />
 
         <FlatList
-          data={professores}
+          data={professor}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <View style={styles.prof}>
