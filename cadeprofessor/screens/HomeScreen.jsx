@@ -10,7 +10,7 @@ import {
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ConsultarVisoes from "./Visao";
+import ConsultarVisoes from "./ConsultarVisoes";
 import { useNavigation } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();

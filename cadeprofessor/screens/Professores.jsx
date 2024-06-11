@@ -2,9 +2,9 @@ import { View, Button, Text, FlatList, StyleSheet, StatusBar } from "react-nativ
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const API_URL = "http://172.18.16.1:3000/Professor";
+const API_URL = "http://10.136.37.13:3000/professor";
 
-export default function ConsultarProfessor() {
+export default function ConsultarProfessor({ navigation }) {
 
   const fetchProf = async () => {
     try {

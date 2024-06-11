@@ -1,10 +1,10 @@
 import { View, Button, Text, FlatList, StyleSheet } from "react-native";
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://172.18.16.1:3000/Visao"; // Ajuste para o seu IP
+const API_URL = "http://10.136.37.13:3000/visao"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
-export default function ConsultarVisoes() {
+export default function ConsultarVisoes({ navigation }) {
 
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
@@ -36,9 +36,9 @@ export default function ConsultarVisoes() {
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
             <View style={styles.visao}>
-              <Text>Nome do Professor: {item.nome_professor}</Text>
-              <Text>Nome da Sala: {item.nomesala}</Text>
-              <Text>Bloco: {item.bloco}</Text>
+              <Text>Nome do Professor: {item.prof_nome}</Text>
+              <Text>Nome da Sala: {item.sala_nome}</Text>
+              <Text>Bloco: {item.sala_bloco}</Text>
               <Text>Horários do professor: {item.dia_semana}</Text>
               <Text>Período: {item.periodo}</Text>
             </View>

@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "./screens/HomeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ConsultarVisoes from "./screens/Visao";
+import ConsultarVisoes from "./screens/ConsultarVisoes";
 import ConsultarProfessor from "./screens/Professores";
 import ConsultarSalas from "./screens/Salas";
 import ConsultarAlocacoes from "./screens/Alocacoes";
