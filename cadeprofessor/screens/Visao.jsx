@@ -1,7 +1,7 @@
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.35.33:3000/api"; // Ajuste para o seu IP
+const API_URL = "http://10.136.42.34:3000/api"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarVisoes() {
@@ -17,8 +17,8 @@ export default function ConsultarVisoes() {
       setVisoes(data.visoes); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
-      console.error("Erro ao buscar a visão geral das alocações:", error); // Loga o erro no console
-      setError("Não foi possível buscar a visão geral das alocações."); // Define a mensagem de erro
+      console.error("Erro ao buscar a visão geral:", error); // Loga o erro no console
+      setError("Não foi possível buscar a visão geral."); // Define a mensagem de erro
     }
   };
 

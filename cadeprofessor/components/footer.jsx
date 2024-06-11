@@ -1,4 +1,4 @@
-import { Text, Image, View, StyleSheet } from "react-native";
+import { Text, Image, Statusbar, View, StyleSheet } from 'react-native';
 
 const Footer = () => {
   return (
@@ -34,5 +34,6 @@ const styles = StyleSheet.create({
     display: "flex",
   },
 });
+
 
 export default Footer;
