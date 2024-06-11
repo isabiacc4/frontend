@@ -32,6 +32,10 @@ export default function ConsultarVisoes({ navigation }) {
     <View style={styles.container}>
       <StatusBar backgroundColor='#720101' />
 
+      <Text style={{ margin: 16, padding: 30, fontSize: 15, borderRadius: 15 }}>
+        Está página contém informações sobre as visões gerais!
+      </Text>
+
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar todas as visões gerais" onPress={fetchAllVisoes} />
       {visoes.length > 0 && (
@@ -52,13 +56,7 @@ export default function ConsultarVisoes({ navigation }) {
       {/* Exibe a mensagem de erro, se existir */}
       {error && <Text>{error}</Text>}
 
-      <Text></Text>
 
-      <Button
-        title="Voltar para página inicial"
-        onPress={() => navigation.navigate(HomeScreen)}
-        color="#058C42"
-      />
 
       <Text></Text>
       <Footer />

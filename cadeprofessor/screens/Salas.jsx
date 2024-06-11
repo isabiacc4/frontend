@@ -33,12 +33,15 @@ export default function ConsultarSala({ navigation }) {
         <View style={styles.container}>
             <StatusBar backgroundColor='#01667B' />
 
-
+            <Text></Text>
             <Text style={{ margin: 16, padding: 30, fontSize: 15, borderRadius: 15 }}>Está página contem informações sobre as salas que você deseja</Text>
+            <Text></Text>
 
             <View>
 
                 <Button title="Consultar sala" onPress={fetchSalas} color='#01667B' />
+
+                <Text></Text>
 
                 <FlatList
                     data={salas}
@@ -52,17 +55,13 @@ export default function ConsultarSala({ navigation }) {
 
                     )}
                 />
-        {error && <Text style={{ color: 'red' }}>{error}</Text>}
+                {error && <Text style={{ color: 'red' }}>{error}</Text>}
 
 
             </View>
             <Text></Text>
 
-            <Button
-                title="Voltar para página inicial"
-                onPress={() => navigation.navigate(HomeScreen)}
-                color="#058C42"
-            />
+
             <Text></Text>
             <Footer />
 

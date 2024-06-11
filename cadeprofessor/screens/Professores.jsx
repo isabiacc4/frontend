@@ -62,11 +62,7 @@ export default function ConsultarProfessor({ navigation }) {
         <Text></Text>
         <Text></Text>
 
-        <Button
-          title="Voltar para página inicial"
-          onPress={() => navigation.navigate(HomeScreen)}
-          color="#058C42"
-        />
+
 
         <Text></Text>
         <Footer />

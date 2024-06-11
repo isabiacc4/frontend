@@ -28,14 +28,14 @@ export default function ConsultarAlocacoes({ navigation }) {
 
     return (
         <View style={styles.container}>
-          <StatusBar  backgroundColor='#400048'/>
+            <StatusBar backgroundColor='#400048' />
 
-            <Text style={styles.title}>Consulte a alocação:</Text>
 
-            <Text>Está página contem informações sobre as alocações que você deseja, por favor, insira o id no campo abaixo.</Text>
+
+            <Text style={{ margin: 16, padding: 30, fontSize: 15, borderRadius: 15 }}>Está página contém informações sobre as alocações que você deseja</Text>
 
             <View>
-                
+
                 <Button title="Consultar alocação" onPress={fetchAlocacao} />
 
                 <FlatList
@@ -53,11 +53,7 @@ export default function ConsultarAlocacoes({ navigation }) {
                 <Text></Text>
                 <Text></Text>
 
-                <Button
-                    title="Voltar para página inicial"
-                    onPress={() => navigation.navigate('HomeScreen')}
-                    color="#058C42"
-                />
+
                 <Text></Text>
 
             </View>
