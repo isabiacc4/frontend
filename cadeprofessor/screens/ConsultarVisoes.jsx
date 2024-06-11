@@ -7,6 +7,8 @@ const API_URL = "http://10.136.37.13:3000/visao"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarVisoes({ navigation }) {
+  const [visoes, setVisoes] = useState([]);
+  const [error, setError] = useState(null);
 
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
@@ -30,12 +32,11 @@ export default function ConsultarVisoes({ navigation }) {
     <View style={styles.container}>
       <StatusBar backgroundColor='#720101' />
 
-      {/* Botão para buscar um produto específico */}
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar todas as visões gerais" onPress={fetchAllVisoes} />
       {visoes.length > 0 && (
         <FlatList
-          data={banco} // Dados da lista de produtos
+          data={visoes} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
             <View style={styles.visao}>

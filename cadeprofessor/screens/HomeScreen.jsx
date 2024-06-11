@@ -9,11 +9,7 @@ import {
 } from "react-native";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ConsultarVisoes from "./ConsultarVisoes";
-import { useNavigation } from "@react-navigation/native";
 
-const Stack = createNativeStackNavigator();
 
 const HomeScreen = ({ navigation }) => {
 
@@ -59,7 +55,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte os professores</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate('ConsultarProfessores')}
+                onPress={() => navigation.navigate('Professores')}
                 color="#AD6701"
               />
             </View>
@@ -72,7 +68,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte as salas</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate('ConsultarSalas')}
+                onPress={() => navigation.navigate('Salas')}
                 color="#01667B"
               />
             </View>
@@ -85,7 +81,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte as alocações</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate('ConsultarAlocacoes')}
+                onPress={() => navigation.navigate('Alocacoes')}
                 color="#400048"
               />
             </View>

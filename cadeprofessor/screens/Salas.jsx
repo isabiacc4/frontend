@@ -1,12 +1,17 @@
-import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Button, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
 import Header from '../components/Header'
 import Footer from "../components/Footer";
 import HomeScreen from './HomeScreen';
+import { useState } from 'react';
 
 
 const API_URL = "http://10.136.37.13:3000/sala";
 
 export default function ConsultarSala({ navigation }) {
+    const [salas, setSalas] = useState([]);
+    const [error, setError] = useState(null);
+
+
     const fetchSalas = async () => {
         try {
             const response = await fetch(`${API_URL}/sala_aloc`);
@@ -26,33 +31,29 @@ export default function ConsultarSala({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Header />
+            <StatusBar backgroundColor='#01667B' />
 
-            <Text style={styles.title}>Consulte a sala:</Text>
 
-            <Text>Está página contem informações sobre as salas que você deseja, por favor, insira o id no campo abaixo.</Text>
+            <Text style={{ margin: 16, padding: 30, fontSize: 15, borderRadius: 15 }}>Está página contem informações sobre as salas que você deseja</Text>
 
             <View>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeNumber}
-                    value={number}
-                    placeholder="digite aqui o id da sala"
-                    keyboardType="numeric"
-                />
-                <Button title="Consultar sala" onPress={fetchSalas} />
+
+                <Button title="Consultar sala" onPress={fetchSalas} color='#01667B' />
 
                 <FlatList
-                    data={sala}
+                    data={salas}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => (
                         <View style={styles.salas}>
-                            <Text>Nome da sala: {item.sala_id}</Text>
-
-
+                            <Text>ID da Sala: {item.sala_id}</Text>
+                            <Text>Nome da sala: {item.sala_nome}</Text>
+                            <Text>Bloco da Sala: {item.sala_bloco}</Text>
                         </View>
+
                     )}
                 />
+        {error && <Text style={{ color: 'red' }}>{error}</Text>}
+
 
             </View>
             <Text></Text>
@@ -65,7 +66,7 @@ export default function ConsultarSala({ navigation }) {
             <Text></Text>
             <Footer />
 
-            {error && <Text style={styles.error}>{error}</Text>}
+
         </View>
     );
 }

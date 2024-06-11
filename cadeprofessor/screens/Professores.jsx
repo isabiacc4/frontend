@@ -1,12 +1,15 @@
-import { View, Button, Text, FlatList, StyleSheet, StatusBar } from "react-native";
+import { View, Button, Text, FlatList, StyleSheet, StatusBar, ScrollView } from "react-native";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HomeScreen from './HomeScreen';
+import { useState } from "react";
 
 
 const API_URL = "http://10.136.37.13:3000/professor";
 
 export default function ConsultarProfessor({ navigation }) {
+  const [professores, setProfessores] = useState([]);
+  const [error, setError] = useState(null);
 
   const fetchProf = async () => {
     try {
@@ -26,52 +29,51 @@ export default function ConsultarProfessor({ navigation }) {
 
 
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor='#F18F01' />
-      <Header />
+    <ScrollView>
+      <View style={styles.container}>
+        <StatusBar backgroundColor='#F18F01' />
+        <Text></Text>
 
-      <Text style={styles.title}>Consulte o(a) professor(a):</Text>
+        <Text style={{ margin: 16, padding: 30, fontSize: 15, borderRadius: 15 }}>
+          Está página contém informações sobre os professores!
+        </Text>
 
-      <Text>
-        Está página contem informações sobre o professor que você deseja, por
-        favor, insira o id no campo abaixo.
-      </Text>
+        <View>
+          <Text></Text>
+          <Text></Text>
 
-      <View>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeNumber}
-          value={number}
-          placeholder="digite aqui o id do professor"
-          keyboardType="numeric"
+          <Button title="Consultar professores" onPress={fetchProf} color='#F18F01' />
+
+          <FlatList
+            data={professores}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <View style={styles.prof}>
+                <Text>ID: {item.prof_id}</Text>
+                <Text>Nome do Professor: {item.prof_nome}</Text>
+                <Text>Telefone: {item.prof_telefone}</Text>
+              </View>
+            )}
+          />
+        </View>
+        <Text></Text>
+        {error && <Text style={{ color: 'red' }}>{error}</Text>}
+
+        <Text></Text>
+        <Text></Text>
+
+        <Button
+          title="Voltar para página inicial"
+          onPress={() => navigation.navigate(HomeScreen)}
+          color="#058C42"
         />
-        <Button title="Consultar professor(a)" onPress={fetchProf} />
 
-        <FlatList
-          data={professor}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.prof}>
-              <Text>ID: {item.prof_id}</Text>
-              <Text>Nome do Professor: {item.prof_nome}</Text>
-              <Text>Telefone: {item.prof_telefone}</Text>
-            </View>
-          )}
-        />
+        <Text></Text>
+        <Footer />
+
       </View>
-      <Text></Text>
+    </ScrollView>
 
-      <Button
-        title="Voltar para página inicial"
-        onPress={() => navigation.navigate(HomeScreen)}
-        color="#058C42"
-      />
-      
-      <Text></Text>
-      <Footer />
-
-      {error && <Text style={styles.error}>{error}</Text>}
-    </View>
   );
 }
 

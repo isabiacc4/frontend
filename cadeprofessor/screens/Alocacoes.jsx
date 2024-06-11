@@ -1,4 +1,4 @@
-import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Button, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
 import Header from '../components/Header'
 import Footer from "../components/Footer";
 import HomeScreen from './HomeScreen';
@@ -6,6 +6,9 @@ import HomeScreen from './HomeScreen';
 const API_URL = "http://10.136.37.13:3000/alocacao";
 
 export default function ConsultarAlocacoes({ navigation }) {
+    const [alocacoes, setalocacoes] = useState([]);
+    const [error, setError] = useState(null);
+
     const fetchAlocacao = async () => {
         try {
             const response = await fetch(`${API_URL}/alocacao_aloc`);
@@ -25,20 +28,14 @@ export default function ConsultarAlocacoes({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Header />
+          <StatusBar  backgroundColor='#400048'/>
 
             <Text style={styles.title}>Consulte a alocação:</Text>
 
             <Text>Está página contem informações sobre as alocações que você deseja, por favor, insira o id no campo abaixo.</Text>
 
             <View>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeNumber}
-                    value={number}
-                    placeholder="digite aqui o id da alocação"
-                    keyboardType="numeric"
-                />
+                
                 <Button title="Consultar alocação" onPress={fetchAlocacao} />
 
                 <FlatList
@@ -62,7 +59,7 @@ export default function ConsultarAlocacoes({ navigation }) {
                     color="#058C42"
                 />
                 <Text></Text>
-                
+
             </View>
             <Footer />
 
