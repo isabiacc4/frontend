@@ -66,6 +66,7 @@ export default function ConsultarProfessor({ navigation }) {
         onPress={() => navigation.navigate(HomeScreen)}
         color="#058C42"
       />
+      
       <Text></Text>
       <Footer />
 

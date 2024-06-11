@@ -62,6 +62,7 @@ export default function ConsultarAlocacoes({ navigation }) {
                     color="#058C42"
                 />
                 <Text></Text>
+                
             </View>
             <Footer />
 
