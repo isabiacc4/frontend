@@ -38,7 +38,7 @@ export default function ConsultarProfessor() {
                     placeholder="digite aqui o id do professor"
                     keyboardType="numeric"
                 />
-                <Button title="Consultar professor(a)" onPress={handleSearch} />
+                <Button title="Consultar professor(a)" onPress={fetchProf} />
 
                 <FlatList
                     data={professores}
