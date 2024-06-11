@@ -45,9 +45,9 @@ export default function ConsultarProfessor() {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => (
                         <View style={styles.prof}>
+                            <Text>ID: {item.prof_id}</Text>
                             <Text>Nome do Professor: {item.prof_nome}</Text>
-
-
+                            <Text>Telefone: {item.prof_telefone}</Text>
                         </View>
                     )}
                 />
