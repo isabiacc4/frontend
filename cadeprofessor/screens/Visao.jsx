@@ -23,11 +23,11 @@ export default function ConsultarVisoes() {
   };
 
   return (
-    <View style={styles.container}>   
+    <View style={styles.container}>
       {/* Botão para buscar um produto específico */}
       <Button title="Consultar visão geral" onPress={handleSearch} />
       {/* Botão para buscar todos os produtos */}
-      <Button title="Listar todos as visões gerais" onPress={fetchAllVisoes} />
+      <Button title="Listar todas as visões gerais" onPress={fetchAllVisoes} />
       {visoes.length > 0 && (
         <FlatList
           data={visoes} // Dados da lista de produtos
@@ -36,7 +36,9 @@ export default function ConsultarVisoes() {
             <View style={styles.visao}>
               <Text>Nome do Professor: {item.nome_professor}</Text>
               <Text>Nome da Sala: {item.nomesala}</Text>
-              <Text>Horarios do professor: {item.alocacao}</Text>
+              <Text>Bloco: {item.bloco}</Text>
+              <Text>Horários do professor: {item.dia_semana}</Text>
+              <Text>Período: {item.periodo}</Text>
             </View>
           )}
         />
