@@ -1,4 +1,4 @@
-import { View, Button, Text, FlatList, StyleSheet } from "react-native";
+import { View, Button, Text, FlatList, StyleSheet, StatusBar } from "react-native";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -23,6 +23,7 @@ export default function ConsultarProfessor() {
 
   return (
     <View style={styles.container}>
+        <StatusBar backgroundColor='#F18F01'/>
       <Header />
 
       <Text style={styles.title}>Consulte o(a) professor(a):</Text>
