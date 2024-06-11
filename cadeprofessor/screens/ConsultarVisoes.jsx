@@ -24,6 +24,7 @@ export default function ConsultarVisoes({ navigation }) {
   };
 
   return (
+    
     <View style={styles.container}>
       <StatusBar backgroundColor='#720101' />
 
