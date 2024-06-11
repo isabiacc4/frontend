@@ -7,17 +7,22 @@ import {
   Button,
   Image,
 } from "react-native";
-import Header from '../components/Header'
+import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ConsultarVisoes from "./Visao";
+import { useNavigation } from "@react-navigation/native";
 
-const HomeScreen = ({ navigation }) => {
+const Stack = createNativeStackNavigator();
+
+const HomeScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView>
-      <Header/>
+      <Header />
       <View style={styles.corpo}>
         <StatusBar backgroundColor="#058C42" />
-
-        
 
         <View style={styles.containerBoasVindas}>
           <Text style={{ color: "white", fontStyle: "italic", fontSize: 25 }}>
@@ -25,12 +30,20 @@ const HomeScreen = ({ navigation }) => {
           </Text>
           <Text></Text>
           <Text style={{ color: "white", fontSize: 14 }}>
-            Este projeto de aplicativo mobile está conectado com API e banco de dados, confira abaixo às informações disponíveis:{" "}
+            Este projeto de aplicativo mobile está conectado com API e banco de
+            dados, confira abaixo às informações disponíveis:{" "}
           </Text>
         </View>
 
-        <Image source={require('../assets/tupileandrodeitado.jpeg')} style={styles.image} />
+        <Image
+          source={require("../assets/tupileandrodeitado.jpeg")}
+          style={styles.image}
+        />
+        <Text style={{ fontSize: 10, marginLeft: 57 }}>
+          Prof. Leandro Grosso e Prof. Antônio Tupinambá
+        </Text>
 
+        <Text></Text>
         <Text></Text>
 
         <View style={styles.nav}>
@@ -46,7 +59,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte os professores</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate("Details")}
+                onPress={() => navigation.navigate("ConsultarProfessores")}
                 color="#AD6701"
               />
             </View>
@@ -56,10 +69,10 @@ const HomeScreen = ({ navigation }) => {
 
           <View style={styles.campoPressSalas}>
             <View style={styles.campoSalas}>
-              <Text style={styles.textoCards}>Consulte os professores</Text>
+              <Text style={styles.textoCards}>Consulte as salas</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate("Details")}
+                onPress={() => navigation.navigate("ConsultarSalas")}
                 color="#01667B"
               />
             </View>
@@ -72,7 +85,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte as alocações</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate("Details")}
+                onPress={() => navigation.navigate("ConsultarAlocacoes")}
                 color="#400048"
               />
             </View>
@@ -83,18 +96,18 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.campoPressVisao}>
             <View style={styles.campoVisao}>
               <Text style={styles.textoCards}>Visão geral das alocações</Text>
+
               <Button
+                color="#720101"
                 title="Mais detalhes"
                 onPress={() => navigation.navigate("ConsultarVisoes")}
-                color="#720101"
               />
             </View>
           </View>
-
         </View>
-
-        <Footer/>
       </View>
+
+      <Footer />
     </ScrollView>
   );
 };
@@ -161,8 +174,8 @@ const styles = StyleSheet.create({
   image: {
     width: 300,
     height: 200,
-    margin: 20, 
-    justifyContent: 'center',
-    borderRadius: 45
+    margin: 20,
+    justifyContent: "center",
+    borderRadius: 45,
   },
 });
