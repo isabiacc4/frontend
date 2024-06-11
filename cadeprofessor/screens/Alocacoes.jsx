@@ -1,23 +1,22 @@
 import { View, Button, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
-import Header from '../components/Header'
 import Footer from "../components/Footer";
-import HomeScreen from './HomeScreen';
+
 
 const API_URL = "http://10.136.37.13:3000/alocacao";
 
 export default function ConsultarAlocacoes({ navigation }) {
-    const [alocacoes, setalocacoes] = useState([]);
+    const [alocacoes, setAlocacoes] = useState([]);
     const [error, setError] = useState(null);
 
     const fetchAlocacao = async () => {
         try {
-            const response = await fetch(`${API_URL}/alocacao_aloc`);
+            const response = await fetch(`${API_URL}/alocacao`);
             if (!response.ok) {
                 const errorResponse = await response.text();
                 throw new Error(errorResponse);
             }
             const data = await response.json();
-            setVisoes(data.alocacoes);
+            setAlocacoes(data);
             setError(null);
         } catch (error) {
             console.error("Erro ao buscar a alocação:", error);

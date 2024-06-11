@@ -1,9 +1,8 @@
 import { View, Button, Text, FlatList, StyleSheet } from "react-native";
-import HomeScreen from './HomeScreen';
 
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.37.13:3000/visao"; // Ajuste para o seu IP
+const API_URL = "http://10.136.37.13:3000/visao/:id"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarVisoes({ navigation }) {
@@ -13,13 +12,13 @@ export default function ConsultarVisoes({ navigation }) {
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
     try {
-      const response = await fetch(`${API_URL}/visao_aloc`); // Faz a requisição GET para a API
+      const response = await fetch(`${API_URL}/visao`); // Faz a requisição GET para a API
       if (!response.ok) {
         const errorResponse = await response.text(); // Lê a resposta de erro
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setVisoes(data.visoes); // Atualiza o estado com a lista de produtos
+      setVisoes(data); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar a visão geral das alocações:", error); // Loga o erro no console

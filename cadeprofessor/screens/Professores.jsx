@@ -1,7 +1,7 @@
 import { View, Button, Text, FlatList, StyleSheet, StatusBar, ScrollView } from "react-native";
-import Header from "../components/Header";
+
 import Footer from "../components/Footer";
-import HomeScreen from './HomeScreen';
+
 import { useState } from "react";
 
 
@@ -13,14 +13,14 @@ export default function ConsultarProfessor({ navigation }) {
 
   const fetchProf = async () => {
     try {
-      const response = await fetch(`${API_URL}/professores_aloc`);
+      const response = await fetch(`${API_URL}/professor`);
       if (!response.ok) {
         const errorResponse = await response.text();
         throw new Error(errorResponse);
       }
       const data = await response.json();
-      setVisoes(data.professores);
-      setError(null);
+      setVisoes(data);
+      setProfessores(null);
     } catch (error) {
       console.error("Erro ao buscar o(a) professor(a):", error);
       setError("Não foi possível buscar o(a) professor(a) desejado.");

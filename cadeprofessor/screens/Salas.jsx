@@ -1,7 +1,7 @@
 import { View, Button, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
-import Header from '../components/Header'
+
 import Footer from "../components/Footer";
-import HomeScreen from './HomeScreen';
+
 import { useState } from 'react';
 
 
@@ -14,13 +14,13 @@ export default function ConsultarSala({ navigation }) {
 
     const fetchSalas = async () => {
         try {
-            const response = await fetch(`${API_URL}/sala_aloc`);
+            const response = await fetch(`${API_URL}/sala`);
             if (!response.ok) {
                 const errorResponse = await response.text();
                 throw new Error(errorResponse);
             }
             const data = await response.json();
-            setVisoes(data.salas);
+            setSalas(data);
             setError(null);
         } catch (error) {
             console.error("Erro ao buscar a sala:", error);
