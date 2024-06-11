@@ -53,7 +53,7 @@ export default function ConsultarProfessor() {
                 />
 
             </View>
-            <footer />
+            <Footer />
 
             {error && <Text style={styles.error}>{error}</Text>}
         </View>
