@@ -7,7 +7,7 @@ const API_URL = "http://10.136.42.34:3000/api";
 export default function ConsultarProfessor() {
     const fetchProf = async () => {
         try {
-            const response = await fetch($`{API_URL}/visao_aloc`);
+            const response = await fetch($`{API_URL}/professores_aloc`);
             if (!response.ok) {
                 const errorResponse = await response.text();
                 throw new Error(errorResponse);
