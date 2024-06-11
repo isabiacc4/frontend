@@ -1,14 +1,15 @@
 import { View, Button, Text, FlatList, StyleSheet } from "react-native";
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.35.33:3000/api"; // Ajuste para o seu IP
+const API_URL = "http://172.18.16.1:3000/Visao"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarVisoes() {
+
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
     try {
-      const response = await fetch($`{API_URL}/visao_aloc`); // Faz a requisição GET para a API
+      const response = await fetch(`${API_URL}/visao_aloc`); // Faz a requisição GET para a API
       if (!response.ok) {
         const errorResponse = await response.text(); // Lê a resposta de erro
         throw new Error(errorResponse); // Lança um erro com a resposta

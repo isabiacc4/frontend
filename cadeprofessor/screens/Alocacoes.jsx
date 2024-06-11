@@ -2,7 +2,7 @@ import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 import Header from '../components/Header'
 import Footer from "../components/Footer";
 
-const API_URL = "http://10.136.42.34:3000/api";
+const API_URL = "http://172.18.16.1:3000/Alocacao";
 
 export default function ConsultarAlocacoes() {
     const fetchAlocacao = async () => {

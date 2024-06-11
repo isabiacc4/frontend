@@ -1,4 +1,4 @@
-import { Text, image, Statusbar, View, StyleSheet } from 'react-native';
+import { Text, Image, View, StyleSheet } from 'react-native';
 
 const Footer = () => {
     return (
@@ -7,16 +7,17 @@ const Footer = () => {
 
             <Image
                 source={require("../assets/logofooter1.png")}
-                style={{ width: 50, height: 50 }}>
+                style={{ width: 200, height: 50 }}>
             </Image>
-
+            <Text></Text>
             <View>
-                <Text>Curso Técnico de Desenvolvimento de Sistemas</Text>
+                <Text style={{ color: 'white', fontWeight: 'bold' }}>Curso Técnico de Desenvolvimento de Sistemas</Text>
             </View>
+            <Text></Text>
 
             <Image
                 source={require("../assets/logofooter2.png")}
-                style={{ width: 50, height: 50 }}>
+                style={{ width: 100, height: 100 }}>
             </Image>
 
 
@@ -31,6 +32,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: '#242222',
+        padding: 20
     },
 })
 

@@ -1,4 +1,4 @@
-import { Text, image, Statusbar, View, StyleSheet } from 'react-native';
+import { Text, Image, View, StyleSheet } from 'react-native';
 
 const Header = () => {
     return(
@@ -7,11 +7,11 @@ const Header = () => {
     
         <Image
             source={require("../assets/logoheader.png")}
-            style={{ width: 50, height: 50 }}>
+            style={{ width: 100, height: 100 }}>
         </Image>
 
         <View>
-        <Text>Onde está o professor?</Text>
+        <Text style={{ color: 'white', fontWeight: 'bold' }}>Onde está o professor?</Text>
         </View>
 
    
@@ -23,7 +23,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: 'space-around',
+        backgroundColor: '#242222',
+        flexDirection: 'row',
+        padding: 35,
     },
 })
 
