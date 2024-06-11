@@ -6,26 +6,26 @@ const API_URL = "http://172.18.16.1:3000/Professor";
 
 export default function ConsultarProfessor() {
 
-    const fetchProf = async () => {
-        try {
-            const response = await fetch(`${API_URL}/professores_aloc`);
-            if (!response.ok) {
-                const errorResponse = await response.text();
-                throw new Error(errorResponse);
-            }
-            const data = await response.json();
-            setVisoes(data.professores);
-            setError(null);
-        } catch (error) {
-            console.error("Erro ao buscar o(a) professor(a):", error);
-            setError("Não foi possível buscar o(a) professor(a) desejado.");
-        }
-    };
+  const fetchProf = async () => {
+    try {
+      const response = await fetch(`${API_URL}/professores_aloc`);
+      if (!response.ok) {
+        const errorResponse = await response.text();
+        throw new Error(errorResponse);
+      }
+      const data = await response.json();
+      setVisoes(data.professores);
+      setError(null);
+    } catch (error) {
+      console.error("Erro ao buscar o(a) professor(a):", error);
+      setError("Não foi possível buscar o(a) professor(a) desejado.");
+    }
+  };
 
 
   return (
     <View style={styles.container}>
-        <StatusBar backgroundColor='#F18F01'/>
+      <StatusBar backgroundColor='#F18F01' />
       <Header />
 
       <Text style={styles.title}>Consulte o(a) professor(a):</Text>

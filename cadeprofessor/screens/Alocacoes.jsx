@@ -62,8 +62,8 @@ export default function ConsultarAlocacoes() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1, // Ocupa todo o espaço disponível
-      
+        flex: 1, // Ocupa todo o espaço disponível
+
     },
-    
-  });
+
+});

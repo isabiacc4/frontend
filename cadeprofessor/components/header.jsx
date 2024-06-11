@@ -1,23 +1,24 @@
 import { Text, Image, View, StyleSheet } from 'react-native';
 
 const Header = () => {
-    return(
+    return (
 
-        <View style = { styles.container } >
-    
-        <Image
-            source={require("../assets/logoheader.png")}
-            style={{ width: 100, height: 100, borderRadius: 50 }}>
-        </Image>
+        <View style={styles.container} >
 
-        <View>
-        <Text style={{ color: 'white', fontWeight: 'bold' }}>Onde está o professor?</Text>
-        </View>
+            <Image
+                source={require("../assets/logoheader.png")}
+                style={{ width: 100, height: 100, borderRadius: 50 }}>
+            </Image>
 
-   
-    </View >
-       
-    )}
+            <View>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}>Onde está o professor?</Text>
+            </View>
+
+
+        </View >
+
+    )
+}
 
 const styles = StyleSheet.create({
     container: {
