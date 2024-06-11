@@ -7,7 +7,7 @@ const API_URL = "http://172.18.16.1:3000/Alocacao";
 export default function ConsultarAlocacoes() {
     const fetchAlocacao = async () => {
         try {
-            const response = await fetch($`{API_URL}/alocacao_aloc`);
+            const response = await fetch(`${API_URL}/alocacao_aloc`);
             if (!response.ok) {
                 const errorResponse = await response.text();
                 throw new Error(errorResponse);

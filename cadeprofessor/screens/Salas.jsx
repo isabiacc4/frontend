@@ -7,7 +7,7 @@ const API_URL = "http://172.18.16.1:3000/Sala";
 export default function ConsultarSala() {
     const fetchSalas = async () => {
         try {
-            const response = await fetch($`{API_URL}/sala_aloc`);
+            const response = await fetch(`${API_URL}/sala_aloc`);
             if (!response.ok) {
                 const errorResponse = await response.text();
                 throw new Error(errorResponse);
@@ -62,8 +62,8 @@ export default function ConsultarSala() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1, // Ocupa todo o espaço disponível
-      
+        flex: 1, // Ocupa todo o espaço disponível
+
     },
-    
-  });
+
+});

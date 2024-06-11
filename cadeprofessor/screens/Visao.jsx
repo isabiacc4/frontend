@@ -25,7 +25,7 @@ export default function ConsultarVisoes() {
 
   return (
     <View style={styles.container}>
-        <StatusBar backgroundColor='#720101'/>
+      <StatusBar backgroundColor='#720101' />
 
       {/* Botão para buscar um produto específico */}
       {/* Botão para buscar todos os produtos */}

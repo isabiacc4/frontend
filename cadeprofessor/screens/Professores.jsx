@@ -8,7 +8,7 @@ export default function ConsultarProfessor() {
 
     const fetchProf = async () => {
         try {
-            const response = await fetch($`{API_URL}/professores_aloc`);
+            const response = await fetch(`${API_URL}/professores_aloc`);
             if (!response.ok) {
                 const errorResponse = await response.text();
                 throw new Error(errorResponse);
