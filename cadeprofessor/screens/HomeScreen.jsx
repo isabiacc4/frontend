@@ -31,7 +31,7 @@ const HomeScreen = () => {
           <Text></Text>
           <Text style={{ color: "white", fontSize: 14 }}>
             Este projeto de aplicativo mobile está conectado com API e banco de
-            dados, confira abaixo às informações disponíveis:{" "}
+            dados, confira abaixo às informações disponíveis:
           </Text>
         </View>
 
