@@ -25,7 +25,6 @@ export default function ConsultarVisoes() {
   return (
     <View style={styles.container}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar visão geral" onPress={handleSearch} />
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar todas as visões gerais" onPress={fetchAllVisoes} />
       {visoes.length > 0 && (
