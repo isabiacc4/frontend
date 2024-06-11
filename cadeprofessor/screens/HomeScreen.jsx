@@ -17,7 +17,6 @@ const Stack = createNativeStackNavigator();
 
 const HomeScreen = ({ navigation }) => {
 
-  // const navigation = useNavigation();
 
   return (
     <ScrollView>
@@ -60,7 +59,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte os professores</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate("ConsultarProfessores")}
+                onPress={() => navigation.navigate('ConsultarProfessores')}
                 color="#AD6701"
               />
             </View>
@@ -73,7 +72,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte as salas</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate("ConsultarSalas")}
+                onPress={() => navigation.navigate('ConsultarSalas')}
                 color="#01667B"
               />
             </View>
@@ -86,7 +85,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.textoCards}>Consulte as alocações</Text>
               <Button
                 title="Mais detalhes"
-                onPress={() => navigation.navigate("ConsultarAlocacoes")}
+                onPress={() => navigation.navigate('ConsultarAlocacoes')}
                 color="#400048"
               />
             </View>
@@ -101,7 +100,7 @@ const HomeScreen = ({ navigation }) => {
               <Button
                 color="#720101"
                 title="Mais detalhes"
-                onPress={() => navigation.navigate("ConsultarVisoes")}
+                onPress={() => navigation.navigate('ConsultarVisoes')}
               />
             </View>
           </View>

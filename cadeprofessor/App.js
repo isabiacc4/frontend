@@ -3,8 +3,8 @@ import HomeScreen from "./screens/HomeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ConsultarVisoes from "./screens/ConsultarVisoes";
 import ConsultarProfessor from "./screens/Professores";
-import ConsultarSalas from "./screens/Salas";
 import ConsultarAlocacoes from "./screens/Alocacoes";
+import ConsultarSala from "./screens/Salas";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +22,13 @@ export default App = () => {
           component={ConsultarProfessor}
           options={{ title: "Consultar os professores" }}
         />
+
+        <Stack.Screen
+          name="Salas"
+          component={ConsultarSala}
+          options={{ title: "Consultar as Salas" }}
+        />
+
         <Stack.Screen
           name="Alocações"
           component={ConsultarAlocacoes}

@@ -1,4 +1,6 @@
 import { View, Button, Text, FlatList, StyleSheet } from "react-native";
+import HomeScreen from './HomeScreen';
+
 
 // Define a URL base da API, ajuste conforme necessário
 const API_URL = "http://10.136.37.13:3000/visao"; // Ajuste para o seu IP
@@ -24,7 +26,7 @@ export default function ConsultarVisoes({ navigation }) {
   };
 
   return (
-    
+
     <View style={styles.container}>
       <StatusBar backgroundColor='#720101' />
 
@@ -48,6 +50,18 @@ export default function ConsultarVisoes({ navigation }) {
       )}
       {/* Exibe a mensagem de erro, se existir */}
       {error && <Text>{error}</Text>}
+
+      <Text></Text>
+
+      <Button
+        title="Voltar para página inicial"
+        onPress={() => navigation.navigate(HomeScreen)}
+        color="#058C42"
+      />
+
+      <Text></Text>
+      <Footer />
+
     </View>
   );
 }

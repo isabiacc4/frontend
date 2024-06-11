@@ -1,10 +1,12 @@
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 import Header from '../components/Header'
 import Footer from "../components/Footer";
+import HomeScreen from './HomeScreen';
+
 
 const API_URL = "http://10.136.37.13:3000/sala";
 
-export default function ConsultarSala(navigation) {
+export default function ConsultarSala({ navigation }) {
     const fetchSalas = async () => {
         try {
             const response = await fetch(`${API_URL}/sala_aloc`);
@@ -53,6 +55,14 @@ export default function ConsultarSala(navigation) {
                 />
 
             </View>
+            <Text></Text>
+
+            <Button
+                title="Voltar para página inicial"
+                onPress={() => navigation.navigate(HomeScreen)}
+                color="#058C42"
+            />
+            <Text></Text>
             <Footer />
 
             {error && <Text style={styles.error}>{error}</Text>}
